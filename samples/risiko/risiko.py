@@ -64,7 +64,7 @@ class RisikoConfig(Config):
 
     # We use a GPU with 12GB memory, which can fit two images.
     # Adjust down if you use a smaller GPU.
-    #IMAGES_PER_GPU = 2
+    IMAGES_PER_GPU = 2
 
     # Number of classes (including background)
     NUM_CLASSES = 3 * 2 + 1  # (Infantry + Horse + Cannon) * (Blue + Green) + Background
@@ -244,7 +244,7 @@ def train(model):
     print("Training network heads")
     model.train(dataset_train, dataset_val,
                 learning_rate=config.LEARNING_RATE,
-                epochs=3, #30
+                epochs=30,
                 layers='heads')
 
 

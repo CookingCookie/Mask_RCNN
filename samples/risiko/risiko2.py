@@ -34,6 +34,10 @@ def get_polygons_and_objects(annotation):
         #print("Objects: {}".format(region_attrs))
         #print("\n")
     return polygons, objects
+
+
+def get_polygons_and_objects2(annotation):
+    return [r['shape_attributes'] for r in a['regions'].values()], [s['region_attributes'] for s in a['regions'].values()]
      
    
 if __name__ == "__main__":

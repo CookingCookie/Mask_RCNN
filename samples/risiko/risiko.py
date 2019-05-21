@@ -144,7 +144,7 @@ class RisikoDataset(utils.Dataset):
             #polygons = [r['shape_attributes'] for r in a['regions'].values()]
             #objects = [s['region_attributes'] for s in a['regions'].values()]
             
-            polygons, objects = risiko2.get_polygons_and_objects(a)
+            polygons, objects = risiko2.get_polygons_and_objects2(a)
 			
             #print(objects)
             num_ids = []

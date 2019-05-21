@@ -278,11 +278,11 @@ def detect_and_color_splash(model, image_path=None, video_path=None):
         # Read image
         image = skimage.io.imread(args.image)
         # Detect objects
-	first_time = datetime.datetime.now()
+        first_time = datetime.datetime.now()
         r = model.detect([image], verbose=1)[0]
-	second_time = datetime.datetime.now()
-	diff_time = second_time - first_time
-	print("Time to detect objects {}".format(diff_time.seconds))
+        second_time = datetime.datetime.now()
+        diff_time = second_time - first_time
+        print("Time to detect objects {}".format(diff_time.seconds))
         # Color splash
         splash = color_splash(image, r['masks'])
         # Save output

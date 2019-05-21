@@ -37,7 +37,7 @@ def get_polygons_and_objects(annotation):
 
 
 def get_polygons_and_objects2(annotation):
-    return [r['shape_attributes'] for r in annotation['regions'].values()], [s['region_attributes'] for s in annotation['regions'].values()]
+    return [r['shape_attributes'] for r in annotation['regions']], [s['region_attributes'] for s in annotation['regions']]
      
    
 if __name__ == "__main__":

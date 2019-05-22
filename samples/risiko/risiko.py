@@ -144,7 +144,7 @@ class RisikoDataset(utils.Dataset):
             #polygons = [r['shape_attributes'] for r in a['regions'].values()]
             #objects = [s['region_attributes'] for s in a['regions'].values()]
             
-            polygons, objects = risiko2.get_polygons_and_objects2(a)
+            polygons, objects = risiko2.get_polygons_and_objects(a)
 			
             #print(objects)
             num_ids = []
@@ -278,11 +278,13 @@ def detect_and_color_splash(model, image_path=None, video_path=None):
         # Read image
         image = skimage.io.imread(args.image)
         # Detect objects
+        print("Start stopwatch")
         first_time = datetime.datetime.now()
         r = model.detect([image], verbose=1)[0]
         second_time = datetime.datetime.now()
         diff_time = second_time - first_time
         print("Time to detect objects {}".format(diff_time.seconds))
+        print("End stopwatch")
         # Color splash
         splash = color_splash(image, r['masks'])
         # Save output
